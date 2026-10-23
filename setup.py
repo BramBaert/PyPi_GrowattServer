@@ -1,12 +1,15 @@
-import setuptools
-import os
 
-with open("README.md", "r") as fh:
-    long_description = fh.read()
+"""Setup metadata for the growattServer package."""
+
+from pathlib import Path
+
+import setuptools
+
+long_description = Path("README.md").read_text(encoding="utf8")
 
 setuptools.setup(
     name="growattServer",
-    version="1.6.0",
+    version="2.2.0",
     author="IndyKoning",
     author_email="indykoningnl@gmail.com",
     description="A package to talk to growatt server",
@@ -15,6 +18,7 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/indykoning/PyPi_GrowattServer",
     packages=setuptools.find_packages(),
+    package_data={"growattServer": ["py.typed"]},
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
